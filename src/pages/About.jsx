@@ -4,7 +4,7 @@ function About() {
   const [aboutData, setAboutData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/about")
+    fetch("https://portfulio-backend-1.onrender.com/api/about")
       .then((res) => res.json())
       .then((data) => setAboutData(data))
       .catch((err) => console.error(err));

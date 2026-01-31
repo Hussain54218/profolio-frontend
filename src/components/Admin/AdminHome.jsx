@@ -24,7 +24,7 @@ function HomeSection() {
   // Load saved data
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:5000/api/home")
+    fetch("https://portfulio-backend-1.onrender.com/api/home")
       .then((res) => res.json())
       .then((data) => {
         if (data) {
@@ -85,7 +85,7 @@ function HomeSection() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/home", {
+      const response = await fetch("https://portfulio-backend-1.onrender.com/api/home", {
         method: "POST",
         body: formData,
       });

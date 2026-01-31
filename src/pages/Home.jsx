@@ -5,10 +5,11 @@ function Home() {
   const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/home")
+    fetch("https://portfulio-backend-1.onrender.com/api/home")
       .then((res) => res.json())
       .then((info) => setData(info))
       .catch((err) => console.error(err));
+      
   }, []);
 
   if (!data) return (
@@ -23,7 +24,7 @@ function Home() {
   const imageSrc = data.image && !imageError
   ? data.image.startsWith("http")
     ? data.image
-    : `http://localhost:5000${data.image}` // Just prepend host
+    : `https://portfulio-backend-1.onrender.com${data.image}` // Just prepend host
   : "/default-profile.png";
 
 

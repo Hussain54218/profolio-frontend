@@ -28,7 +28,7 @@ function AdminSkills() {
       return alert("لطفاً نام و آیکون مهارت را وارد کنید");
     }
     
-    await fetch("http://localhost:5000/api/skills", {
+    await fetch("https://portfulio-backend-1.onrender.com/api/skills", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, icon }),
@@ -45,7 +45,7 @@ function AdminSkills() {
     const formData = new FormData();
     formData.append("cv", cvFile);
 
-    await fetch("http://localhost:5000/api/skills/upload-cv", {
+    await fetch("https://portfulio-backend-1.onrender.com/api/skills/upload-cv", {
       method: "POST",
       body: formData,
     });

@@ -275,7 +275,7 @@ const ProjectsSection = () => {
               <div key={p._id} className="bg-white shadow-md rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition transform hover:-translate-y-1">
                 {p.image && (
                   <div className="h-48 overflow-hidden">
-                    <img src={`https://portfulio-5.onrender.com${p.image}`} alt={p.title} className="w-full h-full object-cover" />
+                    <img src={`https://portfulio-backend-1.onrender.com${p.image}`} alt={p.title} className="w-full h-full object-cover" />
                   </div>
                 )}
                 <div className="p-5">

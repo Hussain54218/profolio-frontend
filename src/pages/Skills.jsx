@@ -6,7 +6,7 @@ function Skills() {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/skills")
+    fetch("https://portfulio-backend-1.onrender.com/api/skills")
       .then((res) => res.json())
       .then((data) => setSkills(data))
       .catch((err) => console.error(err));
@@ -95,7 +95,7 @@ function Skills() {
         {/* Download CV Button */}
         <div className="text-center mb-16">
           <a
-            href="http://localhost:5000/api/skills/download-cv"
+            href="https://portfulio-backend-1.onrender.com/api/skills/download-cv"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-xl shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"

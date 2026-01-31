@@ -27,7 +27,7 @@ function Navbar() {
             <NavLink to="/projects" icon={<FaFolder />} onClick={closeMenu}>Projects</NavLink>
             <NavLink to="/skills" icon={<FaLightbulb />} onClick={closeMenu}>Skills</NavLink>
             <NavLink to="/contact" icon={<FaEnvelope />} onClick={closeMenu}>Contact</NavLink>
-            {/* {!user && <NavLink to="/login" icon={<FaEnvelope />} onClick={closeMenu}>Sign In</NavLink>}
+            {!user && <NavLink to="/login" icon={<FaEnvelope />} onClick={closeMenu}>Sign In</NavLink>}
 
             {user && user.role === "admin" && (
               <Link
@@ -44,7 +44,7 @@ function Navbar() {
               <button onClick={logout} className="text-white px-3 py-2 rounded hover:bg-blue-800 transition-colors">
                 Logout
               </button>
-            )} */}
+            )}
           </div>
 
           {/* Mobile Button */}
@@ -63,7 +63,7 @@ function Navbar() {
             <MobileNavLink to="/projects" icon={<FaFolder />} onClick={closeMenu}>Projects</MobileNavLink>
             <MobileNavLink to="/skills" icon={<FaLightbulb />} onClick={closeMenu}>Skills</MobileNavLink>
             <MobileNavLink to="/contact" icon={<FaEnvelope />} onClick={closeMenu}>Contact</MobileNavLink>
-            {/* {!user && <MobileNavLink to="/login" icon={<FaEnvelope />} onClick={closeMenu}>Sign In</MobileNavLink>}
+            {!user && <MobileNavLink to="/login" icon={<FaEnvelope />} onClick={closeMenu}>Sign In</MobileNavLink>}
 
             {user && user.role === "admin" && (
               <MobileNavLink to="/admin" icon={<FaCog />} onClick={closeMenu} isAdmin={true}>Admin Panel</MobileNavLink>
@@ -73,7 +73,7 @@ function Navbar() {
               <button onClick={logout} className="w-full text-left px-4 py-2 text-white rounded hover:bg-blue-800 transition-colors">
                 Logout
               </button>
-            )} */}
+            )}
           </div>
         </div>
       </div>

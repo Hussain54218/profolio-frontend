@@ -9,7 +9,7 @@ function Home() {
       .then((res) => res.json())
       .then((info) => setData(info))
       .catch((err) => console.error(err));
-      
+
   }, []);
 
   if (!data) return (

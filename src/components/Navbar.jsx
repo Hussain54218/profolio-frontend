@@ -65,9 +65,9 @@ function Navbar() {
             <MobileNavLink to="/contact" icon={<FaEnvelope />} onClick={closeMenu}>Contact</MobileNavLink>
             {!user && <MobileNavLink to="/login" icon={<FaEnvelope />} onClick={closeMenu}>Sign In</MobileNavLink>}
 
-            {user && user.role === "admin" && (
+            {/* {user && user.role === "admin" && (
               <MobileNavLink to="/admin" icon={<FaCog />} onClick={closeMenu} isAdmin={true}>Admin Panel</MobileNavLink>
-            )}
+            )} */}
 
             {user && (
               <button onClick={logout} className="w-full text-left px-4 py-2 text-white rounded hover:bg-blue-800 transition-colors">

@@ -3,7 +3,7 @@ import { ProjectContext } from "../context/ProjectContext";
 import ProjectCard from "../components/ProjectCard";
 
 function Projects() {
-  const { projects } = useContext(ProjectContext);
+  const { projects, loading } = useContext(ProjectContext); // loading اضافه شد
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
@@ -49,6 +49,90 @@ function Projects() {
       setIsExpanded(false);
     }
   }, [filteredProjects.length]);
+
+  // اگر در حال لودینگ هستیم، اسکلت نمایش دهیم
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white overflow-hidden relative">
+        {/* Background elements */}
+        <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-blue-500/10 to-transparent"></div>
+        <div className="absolute top-1/4 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 -right-40 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
+        
+        <section className="relative z-10 container mx-auto px-4 py-16">
+          {/* Header Section Skeleton */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-6 shadow-lg animate-pulse">
+              <div className="h-10 w-10 bg-white/20 rounded"></div>
+            </div>
+            <div className="h-12 bg-white/10 rounded-xl w-64 mx-auto mb-6 animate-pulse"></div>
+            <div className="h-6 bg-white/5 rounded-lg w-96 max-w-full mx-auto animate-pulse"></div>
+          </div>
+
+          {/* Filter and Search Section Skeleton */}
+          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 mb-12 border border-white/10 shadow-2xl">
+            <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+              {/* Search Bar Skeleton */}
+              <div className="relative flex-grow max-w-xl">
+                <div className="h-14 bg-white/5 rounded-xl animate-pulse"></div>
+              </div>
+              
+              {/* Category Filters Skeleton */}
+              <div className="flex flex-wrap gap-3 justify-center">
+                {[1, 2, 3, 4].map(i => (
+                  <div 
+                    key={i}
+                    className="h-10 w-24 bg-white/5 rounded-xl animate-pulse"
+                    style={{ animationDelay: `${i * 0.1}s` }}
+                  ></div>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Projects Grid Skeleton */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map(i => (
+              <div 
+                key={i}
+                className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-6 shadow-xl animate-pulse"
+                style={{ animationDelay: `${i * 0.2}s` }}
+              >
+                <div className="h-48 bg-white/10 rounded-xl mb-6"></div>
+                <div className="h-6 bg-white/10 rounded-lg w-3/4 mb-4"></div>
+                <div className="h-4 bg-white/5 rounded-lg w-full mb-3"></div>
+                <div className="h-4 bg-white/5 rounded-lg w-2/3 mb-6"></div>
+                <div className="flex gap-2 mb-6">
+                  <div className="h-6 bg-white/10 rounded-full w-16"></div>
+                  <div className="h-6 bg-white/10 rounded-full w-20"></div>
+                  <div className="h-6 bg-white/10 rounded-full w-14"></div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="h-10 bg-white/10 rounded-lg flex-1"></div>
+                  <div className="h-10 bg-white/10 rounded-lg flex-1"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Collaboration CTA Skeleton */}
+          <div className="mt-20 bg-gradient-to-r from-blue-600/30 to-purple-600/30 backdrop-blur-md rounded-2xl p-12 border border-white/10 shadow-2xl relative overflow-hidden">
+            <div className="absolute -top-20 -left-20 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-purple-400/10 rounded-full blur-2xl"></div>
+            
+            <div className="relative z-10">
+              <div className="h-10 bg-white/10 rounded-lg w-80 max-w-full mx-auto mb-6 animate-pulse"></div>
+              <div className="h-5 bg-white/5 rounded-lg w-96 max-w-full mx-auto mb-8 animate-pulse"></div>
+              <div className="flex flex-col sm:flex-row gap-5 justify-center">
+                <div className="h-12 bg-white/10 rounded-xl w-48 animate-pulse"></div>
+                <div className="h-12 bg-white/5 rounded-xl w-48 animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white overflow-hidden relative">

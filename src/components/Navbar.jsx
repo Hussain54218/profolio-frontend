@@ -63,17 +63,17 @@ function Navbar() {
             <MobileNavLink to="/projects" icon={<FaFolder />} onClick={closeMenu}>Projects</MobileNavLink>
             <MobileNavLink to="/skills" icon={<FaLightbulb />} onClick={closeMenu}>Skills</MobileNavLink>
             <MobileNavLink to="/contact" icon={<FaEnvelope />} onClick={closeMenu}>Contact</MobileNavLink>
-            {!user && <MobileNavLink to="/login" icon={<FaEnvelope />} onClick={closeMenu}>Sign In</MobileNavLink>}
+            {/* {!user && <MobileNavLink to="/login" icon={<FaEnvelope />} onClick={closeMenu}>Sign In</MobileNavLink>} */}
 
             {/* {user && user.role === "admin" && (
               <MobileNavLink to="/admin" icon={<FaCog />} onClick={closeMenu} isAdmin={true}>Admin Panel</MobileNavLink>
             )} */}
 
-            {user && (
+            {/* {user && (
               <button onClick={logout} className="w-full text-left px-4 py-2 text-white rounded hover:bg-blue-800 transition-colors">
                 Logout
               </button>
-            )}
+            )} */}
           </div>
         </div>
       </div>
